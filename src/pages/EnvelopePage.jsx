@@ -29,8 +29,8 @@ const EnvelopePage = () => {
 
       {!showMessage ? (
         <div className="envelope-section">
-          <h2 className="envelope-title">💌 رسالة خاصة ليكي 💌</h2>
-          <p className="envelope-subtitle">اضغطي على الظرف لفتحه</p>
+          <h2 className="envelope-title">💌 رساله صغيره كدا من قلبي عشانك 💌</h2>
+          <p className="envelope-subtitle">دوسي ع الظرف هيتفتح</p>
           
           <div 
             className={`envelope-wrapper ${isOpen ? 'open' : ''}`}
