@@ -30,7 +30,7 @@ const HomePage = () => {
           <h1 className="main-title">
             <span className="title-line">Happy New Year</span>
             <span className="title-line together">Together</span>
-            <span className="title-line name">Janjonty</span>
+            <span className="title-line name">Jojty</span>
           </h1>
 
           <div className="sparkle sparkle-4">⭐</div>
