@@ -7,6 +7,7 @@ const CelebrationPage = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [showRedirect, setShowRedirect] = useState(false);
   const [countdown, setCountdown] = useState(5);
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
   
   const fullText = 'Happy New Year Together Janjonty';
 
@@ -18,11 +19,12 @@ const CelebrationPage = () => {
         index++;
       } else {
         clearInterval(interval);
+        setIsTypingComplete(true);
         setTimeout(() => {
           setShowRedirect(true);
         }, 1000);
       }
-    }, 150);
+    }, 100);
 
     return () => clearInterval(interval);
   }, []);
@@ -56,7 +58,7 @@ const CelebrationPage = () => {
 
       <div className="celebration-content">
         <div className="stars-decoration">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <div 
               key={i} 
               className="star"
@@ -73,9 +75,12 @@ const CelebrationPage = () => {
 
         <div className="main-celebration-text">
           <div className="text-wrapper">
-            <span className="celebration-icon left">🎆</span>
-            <h1 className="typewriter-title">{displayedText}</h1>
-            <span className="celebration-icon right">🎆</span>
+            <span className="celebration-icon">🎆</span>
+            <h1 className={`typewriter-title ${isTypingComplete ? 'complete' : ''}`}>
+              {displayedText}
+              <span className="cursor">|</span>
+            </h1>
+            <span className="celebration-icon">🎆</span>
           </div>
           
           <div className="subtitle-decoration">
@@ -97,7 +102,7 @@ const CelebrationPage = () => {
           <div className="redirect-notice">
             <div className="notice-card">
               <span className="notice-icon">💬</span>
-              <p>جاري تحويلك للواتساب...</p>
+              <p className="notice-text">جاري تحويلك للواتساب...</p>
               <div className="countdown-circle">
                 <span>{countdown}</span>
               </div>

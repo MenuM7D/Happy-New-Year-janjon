@@ -11,6 +11,7 @@ body {
   font-family: 'Playfair Display', serif;
   background: linear-gradient(135deg, #1a0a0a 0%, #2d1f1f 50%, #1a0a0a 100%);
   min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
   color: #fff;
 }
@@ -27,7 +28,7 @@ body {
 /* Glowing Text Effect */
 .glowing-text {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(2rem, 8vw, 5rem);
+  font-size: clamp(1.8rem, 7vw, 5rem);
   text-align: center;
   color: var(--gold);
   text-shadow: 
@@ -62,8 +63,8 @@ body {
 /* Snowy Button */
 .christmas-button {
   position: relative;
-  padding: 20px 50px;
-  font-size: 1.5rem;
+  padding: 18px 45px;
+  font-size: 1.4rem;
   font-family: 'Dancing Script', cursive;
   background: linear-gradient(180deg, #c41e3a 0%, #8b0000 100%);
   color: white;
@@ -75,6 +76,7 @@ body {
   box-shadow: 
     0 8px 25px rgba(196, 30, 58, 0.5),
     inset 0 -5px 20px rgba(0,0,0,0.3);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .christmas-button::before {
@@ -98,7 +100,7 @@ body {
   position: absolute;
   top: 5px;
   right: 15px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   opacity: 0.8;
   animation: snowflake-spin 3s linear infinite;
 }
@@ -109,16 +111,20 @@ body {
 }
 
 .christmas-button:hover {
-  transform: translateY(-5px) scale(1.05);
+  transform: translateY(-3px) scale(1.03);
   box-shadow: 
     0 15px 35px rgba(196, 30, 58, 0.6),
     inset 0 -5px 20px rgba(0,0,0,0.3);
 }
 
+.christmas-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
 /* Romantic Button */
 .romantic-button {
-  padding: 15px 40px;
-  font-size: 1.3rem;
+  padding: 14px 35px;
+  font-size: 1.2rem;
   font-family: 'Dancing Script', cursive;
   background: linear-gradient(45deg, #ff69b4, #c41e3a, #ff69b4);
   background-size: 200% 200%;
@@ -129,6 +135,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+  -webkit-tap-highlight-color: transparent;
 }
 
 @keyframes gradient-shift {
@@ -138,8 +145,12 @@ body {
 }
 
 .romantic-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 10px 30px rgba(255, 105, 180, 0.6);
+}
+
+.romantic-button:active {
+  transform: scale(0.98);
 }
 
 /* Envelope Styles */
@@ -149,8 +160,8 @@ body {
 
 .envelope {
   position: relative;
-  width: 320px;
-  height: 220px;
+  width: 280px;
+  height: 190px;
   background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
   border-radius: 10px;
   cursor: pointer;
@@ -178,7 +189,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 4rem;
+  font-size: 3.5rem;
   z-index: 3;
 }
 
@@ -195,7 +206,7 @@ body {
 .message-card {
   background: linear-gradient(145deg, #fff9f9 0%, #ffe4e4 50%, #fff0f0 100%);
   border-radius: 20px;
-  padding: 40px;
+  padding: 30px;
   max-width: 600px;
   margin: 0 auto;
   box-shadow: 
@@ -224,7 +235,7 @@ body {
 
 .message-text {
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   line-height: 2;
   color: #4a1a1a;
   text-align: right;
@@ -270,14 +281,15 @@ body {
 /* Typewriter Effect */
 .typewriter-text {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: clamp(1.5rem, 5vw, 4rem);
   color: var(--gold);
   text-shadow: 
     0 0 10px var(--gold),
     0 0 20px var(--christmas-red),
     0 0 30px var(--romantic-pink);
   overflow: hidden;
-  white-space: nowrap;
+  white-space: normal;
+  word-wrap: break-word;
   border-right: 3px solid var(--gold);
   animation: typing 4s steps(40) forwards, blink 0.7s infinite;
 }
@@ -312,70 +324,87 @@ body {
   transition: all 0.5s ease;
 }
 
-/* Mobile Responsive Global Styles */
+/* ============ MOBILE RESPONSIVE GLOBAL STYLES ============ */
 @media (max-width: 480px) {
   .christmas-button {
-    padding: 16px 35px;
-    font-size: 1.2rem;
+    padding: 14px 30px;
+    font-size: 1.1rem;
     border-radius: 25px;
   }
 
   .christmas-button::after {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     right: 10px;
   }
 
   .romantic-button {
-    padding: 14px 30px;
-    font-size: 1.1rem;
+    padding: 12px 25px;
+    font-size: 1rem;
     border-radius: 20px;
   }
 
   .glowing-text {
-    font-size: clamp(1.5rem, 6vw, 3rem);
+    font-size: clamp(1.4rem, 5.5vw, 3rem);
   }
 
   .typewriter-text {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(1.2rem, 4.5vw, 2.5rem);
   }
 
   .envelope {
-    width: 260px;
-    height: 180px;
+    width: 220px;
+    height: 150px;
   }
 
   .envelope::after {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .message-card {
-    padding: 25px;
+    padding: 20px;
     border-radius: 15px;
   }
 
   .message-text {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
     line-height: 1.9;
   }
 }
 
 @media (max-width: 360px) {
   .christmas-button {
-    padding: 14px 28px;
-    font-size: 1.1rem;
-  }
-
-  .romantic-button {
     padding: 12px 25px;
     font-size: 1rem;
   }
 
+  .romantic-button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
   .envelope {
-    width: 230px;
-    height: 160px;
+    width: 200px;
+    height: 135px;
   }
 
   .message-card {
-    padding: 20px;
+    padding: 15px;
+  }
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  .glowing-text,
+  .christmas-button::after,
+  .romantic-button,
+  .message-card::before,
+  .typewriter-text,
+  .firework {
+    animation: none;
+  }
+  
+  .christmas-button:hover,
+  .romantic-button:hover {
+    transform: none;
   }
 }

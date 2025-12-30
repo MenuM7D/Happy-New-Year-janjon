@@ -1,5 +1,6 @@
 .envelope-page {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +9,11 @@
   background: 
     radial-gradient(ellipse at center, rgba(139, 0, 0, 0.2) 0%, transparent 70%),
     linear-gradient(180deg, #0a0505 0%, #1a0a0a 50%, #0a0505 100%);
+  padding-top: max(20px, env(safe-area-inset-top));
+  padding-bottom: max(20px, env(safe-area-inset-bottom));
+  padding-left: max(15px, env(safe-area-inset-left));
+  padding-right: max(15px, env(safe-area-inset-right));
+  box-sizing: border-box;
 }
 
 /* Envelope Section */
@@ -15,25 +21,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   z-index: 10;
+  width: 100%;
+  max-width: 100%;
 }
 
 .envelope-title {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: clamp(1.8rem, 5.5vw, 3.5rem);
   color: #ffd700;
   text-shadow: 
     0 0 10px #ffd700,
     0 0 20px #c41e3a;
   text-align: center;
+  padding: 0 10px;
 }
 
 .envelope-subtitle {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3.5vw, 1.5rem);
   color: #ff69b4;
   text-shadow: 0 0 10px #ff69b4;
+  text-align: center;
 }
 
 .envelope-wrapper {
@@ -46,10 +56,14 @@
   transform: scale(1.05);
 }
 
+.envelope-wrapper:active {
+  transform: scale(0.98);
+}
+
 .envelope {
   position: relative;
-  width: 300px;
-  height: 200px;
+  width: 280px;
+  height: 190px;
   background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
   border-radius: 10px;
   box-shadow: 
@@ -63,7 +77,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: 95px;
   background: linear-gradient(180deg, #d4534b 0%, #c41e3a 100%);
   clip-path: polygon(0 0, 50% 80%, 100% 0);
   transform-origin: top center;
@@ -95,7 +109,7 @@
 }
 
 .envelope-letter {
-  font-size: 3rem;
+  font-size: 2.5rem;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -109,7 +123,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3rem;
+  font-size: 2.5rem;
   z-index: 2;
   filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.8));
   animation: heart-beat 1s ease-in-out infinite;
@@ -122,12 +136,12 @@
 
 .envelope-decorations {
   position: absolute;
-  bottom: -40px;
+  bottom: -35px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 20px;
-  font-size: 1.5rem;
+  gap: 15px;
+  font-size: 1.3rem;
 }
 
 .decoration {
@@ -146,15 +160,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   color: #ffd700;
   font-family: 'Dancing Script', cursive;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   animation: hint-pulse 2s ease-in-out infinite;
+  margin-top: 15px;
 }
 
 .hint-arrow {
-  font-size: 2rem;
+  font-size: 1.8rem;
   animation: point-up 1s ease-in-out infinite;
 }
 
@@ -173,12 +188,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   z-index: 10;
   animation: fadeInUp 1s ease;
   width: 100%;
-  max-width: 700px;
-  padding: 20px;
+  max-width: 650px;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 @keyframes fadeInUp {
@@ -200,9 +216,9 @@
 .card-decorations {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  font-size: 2rem;
-  margin: 15px 0;
+  gap: 20px;
+  font-size: 1.8rem;
+  margin: 12px 0;
 }
 
 .card-decorations span {
@@ -220,7 +236,7 @@
 .message-card {
   background: linear-gradient(145deg, #fff9f9 0%, #ffe4e4 50%, #fff0f0 100%);
   border-radius: 20px;
-  padding: 30px;
+  padding: 25px 20px;
   box-shadow: 
     0 25px 60px rgba(196, 30, 58, 0.3),
     inset 0 0 30px rgba(255, 105, 180, 0.1);
@@ -243,21 +259,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
   border-bottom: 2px dashed rgba(196, 30, 58, 0.3);
+  flex-wrap: wrap;
 }
 
 .card-header h3 {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
   color: #8b0000;
   text-shadow: 0 2px 4px rgba(139, 0, 0, 0.2);
+  text-align: center;
 }
 
 .header-icon {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   animation: icon-bounce 2s ease-in-out infinite;
 }
 
@@ -273,8 +291,8 @@
 
 .message-text {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  line-height: 2.2;
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  line-height: 2;
   color: #4a1a1a;
   text-align: right;
   direction: rtl;
@@ -284,26 +302,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
-  padding-top: 15px;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 12px;
   border-top: 2px dashed rgba(196, 30, 58, 0.3);
   font-family: 'Dancing Script', cursive;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #c41e3a;
+  flex-wrap: wrap;
 }
 
 .next-button {
-  font-size: 1.5rem;
-  padding: 20px 50px;
+  font-size: 1.3rem;
+  padding: 18px 40px;
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 12px;
+  margin-top: 15px;
+  min-height: 55px;
 }
 
-/* Responsive - Tablets */
+/* ============ RESPONSIVE - TABLETS ============ */
 @media (max-width: 768px) {
+  .envelope-page {
+    padding: 15px;
+  }
+
   .envelope {
     width: 250px;
     height: 170px;
@@ -313,22 +337,29 @@
     height: 85px;
   }
 
+  .message-section {
+    padding: 10px;
+    gap: 20px;
+  }
+
   .message-card {
-    padding: 20px;
+    padding: 20px 15px;
   }
 
   .next-button {
     font-size: 1.2rem;
-    padding: 15px 35px;
+    padding: 16px 35px;
   }
 }
 
-/* Responsive - Mobile Phones */
+/* ============ RESPONSIVE - MOBILE PHONES ============ */
 @media (max-width: 480px) {
   .envelope-page {
-    padding: 15px;
+    padding: 15px 10px;
+    padding-top: max(20px, env(safe-area-inset-top));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    justify-content: flex-start;
     padding-top: 30px;
-    padding-bottom: 30px;
   }
 
   .envelope-section {
@@ -336,12 +367,12 @@
   }
 
   .envelope-title {
-    font-size: 1.8rem;
-    padding: 0 10px;
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    padding: 0 5px;
   }
 
   .envelope-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.3rem);
   }
 
   .envelope {
@@ -362,13 +393,14 @@
   }
 
   .envelope-decorations {
-    bottom: -35px;
-    font-size: 1.2rem;
-    gap: 15px;
+    bottom: -30px;
+    font-size: 1.1rem;
+    gap: 12px;
   }
 
   .click-hint {
     font-size: 1.1rem;
+    margin-top: 10px;
   }
 
   .hint-arrow {
@@ -377,59 +409,68 @@
 
   /* Message Section */
   .message-section {
-    padding: 10px;
-    gap: 20px;
+    padding: 8px;
+    gap: 18px;
   }
 
   .card-decorations {
-    font-size: 1.5rem;
-    gap: 20px;
-    margin: 10px 0;
+    font-size: 1.4rem;
+    gap: 15px;
+    margin: 8px 0;
   }
 
   .message-card {
-    padding: 15px;
+    padding: 15px 12px;
     border-radius: 15px;
   }
 
   .card-header {
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 15px;
     padding-bottom: 10px;
   }
 
   .card-header h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
   }
 
   .header-icon {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .message-text {
-    font-size: 0.95rem;
-    line-height: 2;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    line-height: 1.9;
   }
 
   .card-footer {
-    gap: 10px;
+    gap: 8px;
     margin-top: 15px;
     padding-top: 10px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .next-button {
     font-size: 1.1rem;
     padding: 15px 30px;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 12px;
+    min-height: 50px;
   }
 }
 
-/* Very small screens */
+/* ============ VERY SMALL SCREENS ============ */
 @media (max-width: 360px) {
+  .envelope-page {
+    padding: 12px 8px;
+  }
+
   .envelope-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 4.5vw, 1.8rem);
+  }
+
+  .envelope-subtitle {
+    font-size: 1rem;
   }
 
   .envelope {
@@ -441,17 +482,113 @@
     height: 68px;
   }
 
+  .envelope-letter {
+    font-size: 1.8rem;
+  }
+
+  .envelope-heart {
+    font-size: 1.8rem;
+  }
+
   .message-text {
-    font-size: 0.9rem;
-    line-height: 1.9;
+    font-size: 0.85rem;
+    line-height: 1.85;
   }
 
   .card-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .next-button {
+    font-size: 1rem;
+    padding: 14px 25px;
+  }
+
+  .card-decorations {
+    font-size: 1.2rem;
+    gap: 12px;
+  }
+}
+
+/* ============ LANDSCAPE MODE FIX ============ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .envelope-page {
+    min-height: auto;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .envelope-section {
+    gap: 10px;
+  }
+
+  .envelope-title {
     font-size: 1.3rem;
+  }
+
+  .envelope-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .envelope {
+    width: 180px;
+    height: 120px;
+  }
+
+  .envelope-flap {
+    height: 60px;
+  }
+
+  .envelope-letter,
+  .envelope-heart {
+    font-size: 1.5rem;
+  }
+
+  .click-hint {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  .message-section {
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .message-card {
+    padding: 12px 10px;
+  }
+
+  .card-decorations {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+
+  .message-text {
+    font-size: 0.85rem;
+    line-height: 1.7;
   }
 
   .next-button {
     font-size: 1rem;
     padding: 12px 25px;
+    margin-top: 8px;
+    min-height: 44px;
+  }
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  .envelope-letter,
+  .envelope-heart,
+  .decoration,
+  .hint-arrow,
+  .click-hint,
+  .card-decorations span,
+  .header-icon {
+    animation: none;
+  }
+
+  .envelope-wrapper:hover {
+    transform: none;
   }
 }
