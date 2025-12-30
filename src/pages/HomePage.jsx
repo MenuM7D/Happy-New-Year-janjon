@@ -46,7 +46,7 @@ const HomePage = () => {
 
         <button className="christmas-button main-button" onClick={handleClick}>
           <span className="button-snow">❄️</span>
-          افتحي يا قلبي
+          دوسي هنا يا قلبي
           <span className="button-snow">❄️</span>
         </button>
 
