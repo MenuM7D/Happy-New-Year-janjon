@@ -9,7 +9,7 @@ const CelebrationPage = () => {
   const [countdown, setCountdown] = useState(5);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   
-  const fullText = 'Happy New Year Together Janjonty';
+  const fullText = 'Happy New Year Together Ya Banoty';
 
   const typeText = useCallback(() => {
     let index = 0;
