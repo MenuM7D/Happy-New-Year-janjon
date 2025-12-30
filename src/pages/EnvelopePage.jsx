@@ -70,7 +70,7 @@ const EnvelopePage = () => {
             <div className="message-card">
               <div className="card-header">
                 <span className="header-icon">💌</span>
-                <h3>كل سنه وانتي معايا يا جنجونتي</h3>
+                <h3>كل سنه وانتي معايا</h3>
                 <span className="header-icon">💌</span>
               </div>
               
