@@ -1,0 +1,121 @@
+import { useEffect, useState, useCallback } from 'react';
+import Fireworks from '../components/Fireworks';
+import Snowfall from '../components/Snowfall';
+import './CelebrationPage.css';
+
+const CelebrationPage = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [showRedirect, setShowRedirect] = useState(false);
+  const [countdown, setCountdown] = useState(5);
+  
+  const fullText = 'Happy New Year Together Janjonty';
+
+  const typeText = useCallback(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index <= fullText.length) {
+        setDisplayedText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(interval);
+        setTimeout(() => {
+          setShowRedirect(true);
+        }, 1000);
+      }
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const cleanup = typeText();
+    return cleanup;
+  }, [typeText]);
+
+  useEffect(() => {
+    if (showRedirect) {
+      const countdownInterval = setInterval(() => {
+        setCountdown((prev) => {
+          if (prev <= 1) {
+            clearInterval(countdownInterval);
+            window.location.href = 'https://wa.me/201227156671';
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+
+      return () => clearInterval(countdownInterval);
+    }
+  }, [showRedirect]);
+
+  return (
+    <div className="celebration-page">
+      <Fireworks />
+      <Snowfall showHearts={true} showCandy={false} />
+
+      <div className="celebration-content">
+        <div className="stars-decoration">
+          {[...Array(20)].map((_, i) => (
+            <div 
+              key={i} 
+              className="star"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+              }}
+            >
+              ⭐
+            </div>
+          ))}
+        </div>
+
+        <div className="main-celebration-text">
+          <div className="text-wrapper">
+            <span className="celebration-icon left">🎆</span>
+            <h1 className="typewriter-title">{displayedText}</h1>
+            <span className="celebration-icon right">🎆</span>
+          </div>
+          
+          <div className="subtitle-decoration">
+            <span>💖</span>
+            <span className="subtitle">كل سنة وانتي معايا يا قمر</span>
+            <span>💖</span>
+          </div>
+        </div>
+
+        <div className="celebration-emojis">
+          <span className="emoji-float">🎉</span>
+          <span className="emoji-float">🥳</span>
+          <span className="emoji-float">🎊</span>
+          <span className="emoji-float">💕</span>
+          <span className="emoji-float">🎉</span>
+        </div>
+
+        {showRedirect && (
+          <div className="redirect-notice">
+            <div className="notice-card">
+              <span className="notice-icon">💬</span>
+              <p>جاري تحويلك للواتساب...</p>
+              <div className="countdown-circle">
+                <span>{countdown}</span>
+              </div>
+              <p className="notice-hint">استني ثانية يا قمر 💕</p>
+            </div>
+          </div>
+        )}
+
+        <div className="bottom-hearts">
+          <span>❤️</span>
+          <span>💖</span>
+          <span>💕</span>
+          <span>💗</span>
+          <span>❤️</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CelebrationPage;
