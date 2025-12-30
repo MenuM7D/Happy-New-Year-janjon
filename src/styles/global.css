@@ -311,3 +311,71 @@ body {
   opacity: 0;
   transition: all 0.5s ease;
 }
+
+/* Mobile Responsive Global Styles */
+@media (max-width: 480px) {
+  .christmas-button {
+    padding: 16px 35px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+  }
+
+  .christmas-button::after {
+    font-size: 0.8rem;
+    right: 10px;
+  }
+
+  .romantic-button {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+  }
+
+  .glowing-text {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+
+  .typewriter-text {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .envelope {
+    width: 260px;
+    height: 180px;
+  }
+
+  .envelope::after {
+    font-size: 3rem;
+  }
+
+  .message-card {
+    padding: 25px;
+    border-radius: 15px;
+  }
+
+  .message-text {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+}
+
+@media (max-width: 360px) {
+  .christmas-button {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+
+  .romantic-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .envelope {
+    width: 230px;
+    height: 160px;
+  }
+
+  .message-card {
+    padding: 20px;
+  }
+}

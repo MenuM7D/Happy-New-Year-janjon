@@ -302,7 +302,7 @@
   margin-top: 20px;
 }
 
-/* Responsive */
+/* Responsive - Tablets */
 @media (max-width: 768px) {
   .envelope {
     width: 250px;
@@ -320,5 +320,138 @@
   .next-button {
     font-size: 1.2rem;
     padding: 15px 35px;
+  }
+}
+
+/* Responsive - Mobile Phones */
+@media (max-width: 480px) {
+  .envelope-page {
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .envelope-section {
+    gap: 20px;
+  }
+
+  .envelope-title {
+    font-size: 1.8rem;
+    padding: 0 10px;
+  }
+
+  .envelope-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .envelope {
+    width: 220px;
+    height: 150px;
+  }
+
+  .envelope-flap {
+    height: 75px;
+  }
+
+  .envelope-letter {
+    font-size: 2rem;
+  }
+
+  .envelope-heart {
+    font-size: 2rem;
+  }
+
+  .envelope-decorations {
+    bottom: -35px;
+    font-size: 1.2rem;
+    gap: 15px;
+  }
+
+  .click-hint {
+    font-size: 1.1rem;
+  }
+
+  .hint-arrow {
+    font-size: 1.5rem;
+  }
+
+  /* Message Section */
+  .message-section {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .card-decorations {
+    font-size: 1.5rem;
+    gap: 20px;
+    margin: 10px 0;
+  }
+
+  .message-card {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .card-header {
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .card-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .header-icon {
+    font-size: 1.4rem;
+  }
+
+  .message-text {
+    font-size: 0.95rem;
+    line-height: 2;
+  }
+
+  .card-footer {
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 10px;
+    font-size: 1.2rem;
+  }
+
+  .next-button {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    gap: 10px;
+    margin-top: 15px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .envelope-title {
+    font-size: 1.5rem;
+  }
+
+  .envelope {
+    width: 200px;
+    height: 135px;
+  }
+
+  .envelope-flap {
+    height: 68px;
+  }
+
+  .message-text {
+    font-size: 0.9rem;
+    line-height: 1.9;
+  }
+
+  .card-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .next-button {
+    font-size: 1rem;
+    padding: 12px 25px;
   }
 }
