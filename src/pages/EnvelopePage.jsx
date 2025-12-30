@@ -55,7 +55,7 @@ const EnvelopePage = () => {
 
           <div className="click-hint">
             <span className="hint-arrow">👆</span>
-            <span>اضغطي هنا</span>
+            <span>دوسي هنا</span>
           </div>
         </div>
       ) : (
@@ -70,7 +70,7 @@ const EnvelopePage = () => {
             <div className="message-card">
               <div className="card-header">
                 <span className="header-icon">💌</span>
-                <h3>إلى أغلى جنجونتي</h3>
+                <h3>كل سنه وانتي معايا يا جنجونتي</h3>
                 <span className="header-icon">💌</span>
               </div>
               
@@ -80,7 +80,7 @@ const EnvelopePage = () => {
 
               <div className="card-footer">
                 <span>❤️</span>
-                <span>مع كل حبي</span>
+                <span>من قلبي الرساله دي ها</span>
                 <span>❤️</span>
               </div>
             </div>
@@ -94,7 +94,7 @@ const EnvelopePage = () => {
 
           <button className="romantic-button next-button" onClick={handleNextPage}>
             <span>✨</span>
-            دوسي هنا يا قمر
+            دوسي هنا يا عيوني عشان تكملي
             <span>✨</span>
           </button>
         </div>
