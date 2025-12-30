@@ -85,7 +85,7 @@ const CelebrationPage = () => {
           
           <div className="subtitle-decoration">
             <span>💖</span>
-            <span className="subtitle">كل سنة وانتي معايا يا قمر</span>
+            <span className="subtitle">كل سنة وانتي معايا يا قمري</span>
             <span>💖</span>
           </div>
         </div>
@@ -106,7 +106,7 @@ const CelebrationPage = () => {
               <div className="countdown-circle">
                 <span>{countdown}</span>
               </div>
-              <p className="notice-hint">استني ثانية يا قمر 💕</p>
+              <p className="notice-hint">استني ثواني وهتتحولي لشاتي تلقائي يا عيوني 💕</p>
             </div>
           </div>
         )}
